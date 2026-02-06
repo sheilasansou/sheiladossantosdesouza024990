@@ -1,1 +1,37 @@
-<p>login works!</p>
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-8 rounded-3xl shadow-xl w-full max-w-md border border-gray-100">
+    <h2 class="text-3xl font-extrabold mb-6 text-center text-blue-900">Pet Manager  <span class="text-blue-500">MT</span></h2>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2">Usuário</label>
+        <input 
+          formControlName="username" 
+          type="text" 
+          placeholder="Digite seu usuário"
+          class="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+        >
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2">Senha</label>
+        <input 
+          formControlName="password"
+          type="password" 
+          placeholder="********"
+          class="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+        >
+      </div>
+
+      <button 
+        type="submit" 
+        [disabled]="loginForm.invalid"
+        class="w-full bg-blue-700 text-white font-bold py-3 px-4 rounded-xl hover:bg-blue-800 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors shadow-lg shadow-blue-100"
+      >
+        Entrar no Sistema
+      </button>
+
+    </form>
+  </div>
+</div>
